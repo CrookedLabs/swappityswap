@@ -1,0 +1,126 @@
+.wrapper {
+  width: 100%;
+}
+
+.hero-wrapper {
+  background: linear-gradient(to bottom, $purple-alt 0%, $purple 100%);
+  padding: 0 20px 40px;
+  width: 100%;
+}
+
+.hero-container {
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-header {
+  font-family: $base-font-family;
+  font-size: 4.2rem;
+  font-weight: 200;
+  line-height: 1.2;
+  margin: 45px 0 90px;
+  text-align: center;
+
+  @include susy-breakpoint($tablet) {
+    font-size: 6.2rem;
+  }
+}
+
+.hero-sub {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 120px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include susy-breakpoint($tablet) {
+    font-size: 3.2rem;
+  }
+}
+
+.hero-example {
+  @include span(8);
+  @include pre(2);
+  @include post(2);
+  overflow: hidden;
+  margin-bottom: 60px;
+
+  @include susy-breakpoint($tablet) {
+    @include span(4);
+    @include pre(4);
+    @include post(4);
+  }
+
+  @include susy-breakpoint($desktop + 1) {
+    @include span(2);
+    @include pre(5);
+    @include post(5);
+  }
+}
+
+@keyframes scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.replace.scale {
+  animation-name: scale;
+  animation-duration: .5s;
+  animation-delay: 1s;
+}
+
+.ex-box {
+  float: left;
+  font-size: 2.2rem;
+  width: 50%;
+
+  > div:first-child {
+    margin-bottom: 13px;
+  }
+}
+
+.original-text,
+.replace-text {
+  font-weight: 600;
+  padding-left: gutter(1);
+}
+
+.email {
+  color: $green;
+  font-size: 1.4rem;
+  text-align: center;
+
+  a {
+    color: $green;
+    text-decoration: underline;
+  }
+
+  @include susy-breakpoint($tablet) {
+    font-size: 1.8rem;
+  }
+}
+
+.install {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.install-text {
+  margin-bottom: 20px;
+}
+
+.chrome-webstore {
+  width: 170px;
+}
+
+.typed-cursor{
+    opacity: 1;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

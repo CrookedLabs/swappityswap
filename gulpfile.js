@@ -39,7 +39,7 @@ gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
 });
 
 /**
-* Compile files from js into both _site/css (for live injecting) and site (for future jekyll builds)
+* Compile files from js into both _site/js (for live injecting) and site (for future jekyll builds)
 */
 gulp.task('js', function () {
   return gulp.src('js/*.js')
@@ -71,7 +71,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   gulp.watch('_sass/*.scss', ['sass']);
   gulp.watch('js/*.js', ['js']);
-  gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+  gulp.watch(['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
 /**

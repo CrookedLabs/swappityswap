@@ -2,22 +2,30 @@
 layout: default
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="hero-wrapper">
+  <div class="hero-container">
+    <h1 class="hero-header">Swappity Swap</h1>
+    <h2 class="hero-sub">Replace <span class="replace">the</span> web.</h2>
+    <div class="hero-example">
+      <div class="ex-box">
+        <div class="hero-label">Replace:</div>
+        <div class="hero-label">With:</div>
+      </div>
+      <div class="ex-box">
+        <div>
+          <span class="original-text"></span>
+        </div>
+        <div>
+          <span class="replace-text"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="email">
+    <a href='mailto:?subject=Swappity+Swap&body=https://chrome.google.com/webstore/detail/swappity-swap/pjobfphiicdhkdfoadokeggkcaeneiel' target='_blank'>email</a> yourself the Chrome extension
+  </div>
+</div>
+<div class="install">
+  <div class="install-text">Download the extension in the Chrome store</div>
+  <a href='https://chrome.google.com/webstore/detail/swappity-swap/pjobfphiicdhkdfoadokeggkcaeneiel'><img src='images/chrome-webstore.png' alt='Chrome Webstore' class='chrome-webstore' target='_blank'></a>
 </div>
