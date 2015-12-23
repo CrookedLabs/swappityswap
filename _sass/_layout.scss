@@ -105,7 +105,7 @@
 }
 
 .install {
-  padding: 50px 0 100px;
+  padding: 50px 0;
   text-align: center;
 
   p {
@@ -128,29 +128,62 @@
     100% { opacity:1; }
 }
 
-.page-wrapper {
+.section {
   overflow: hidden;
-  padding: 0 20px;
-}
-
-.page-box {
-  margin-bottom: 30px;
+  padding: 20px;
 
   @include susy-breakpoint($tablet) {
-    @include span(8);
-    @include pre(2);
-    @include post(2);
-    margin-bottom: 75px;
+    padding: 30px 0;
   }
 
   @include susy-breakpoint($desktop) {
-    @include span(6);
-    @include pre(3);
-    @include post(3);
+    padding: 80px 0;
+  }
+
+  &:nth-child(odd) {
+    background-color: #fff
   }
 }
 
-.page-heading {
+.wtf-box {
+
+  @include susy-breakpoint($tablet) {
+    font-size: 2rem;
+    margin: 0 auto;
+    width: 65%;
+  }
+
+  @include susy-breakpoint($tablet) {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
+
+.box {
+  margin: 0 auto;
+
+  @include susy-breakpoint($tablet) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    width: 90%;
+  }
+}
+
+.intro,
+.gif {
+
+  img {
+    @extend %shadow-0;
+  }
+
+  @include susy-breakpoint($tablet) {
+    width: 48%;
+  }
+}
+
+.section-heading {
   font-weight: 700;
 
   @include susy-breakpoint($tablet) {
@@ -160,15 +193,31 @@
   }
 }
 
+.case-heading {
+  color: $green;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 2vh;
+
+  @include susy-breakpoint($tablet) {
+    font-size: 4.6rem;
+  }
+}
+
 .testimonial {
   @extend %shadow-0;
   background-color: #fff;
   border-radius: 2px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding: 50px 20px 30px;
 
   @include susy-breakpoint($tablet) {
-    padding: 75px 30px 30px;
+    padding: 65px 30px 30px;
+    margin-bottom: 0;
+  }
+
+  &:nth-child(odd) {
+    background-color: #f9f9f9;
   }
 }
 
@@ -193,4 +242,30 @@
   font-weight: 600;
   margin: 0;
   text-align: center;
+}
+
+.testimonial-text {
+  margin-top: 30px;
+}
+
+.response {
+  align-items: center;
+  display: flex;
+  padding: 20px 0;
+
+  @include susy-breakpoint($tablet) {
+    font-size: 2rem;
+    margin: 50px auto 0;
+    width: 65%;
+  }
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-right: 15px;
+
+  @include susy-breakpoint($tablet) {
+    font-size: 8rem;
+    margin-right: 30px;
+  }
 }
