@@ -6,6 +6,7 @@ var cp = require('child_process');
 var htmlMin = require('gulp-minify-html');
 var jsMin = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var imagemin = require('gulp-imagemin');
 
 var messages = {
   jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -30,7 +31,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
 * Wait for jekyll-build, then launch the Server
 */
-gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'js', 'images', 'jekyll-build'], function() {
   browserSync({
     server: {
       baseDir: '_site'
@@ -62,6 +63,12 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('css'));
+});
+
+gulp.task('images', function () {
+  return gulp.src('images/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('_site/images'));
 });
 
 /**

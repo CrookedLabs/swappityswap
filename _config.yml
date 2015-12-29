@@ -16,3 +16,5 @@ github_username: CrookedLabs
 
 # Build settings
 markdown: kramdown
+exclude: [images]
+keep_files: [images]
