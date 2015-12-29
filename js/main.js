@@ -28,12 +28,37 @@ $(function () {
       });
     },
   });
+
+  /**
+  * Lazy load images with no JS fallback
+  */
+
+  [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
+    console.log(img);
+    img.setAttribute('src', img.getAttribute('data-src'));
+    img.onload = function () {
+      img.removeAttribute('data-src');
+    };
+  });
+
+  // [].forEach.call(document.querySelectorAll('noscript'), function (noscript) {
+  //   var img = new Image();
+  //   console.log(img);
+  //   img.setAttribute('data-src', '');
+  //   console.log(img);
+  //   img.parentNode.insertBefore(img, noscript);
+  //   img.onload = function () {
+  //     img.removeAttribute('data-src');
+  //   };
+  //   img.src = noscript.getAttribute('data-src');
+  // });
 });
+
 
 function checkMobileForInstall() {
   var email = $('.email');
   var install = $('.install');
-  
+
   if (isMobile(navigator.userAgent || navigator.vendor || window.opera)) {
     install.hide();
     email.show();

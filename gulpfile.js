@@ -65,7 +65,9 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('css'));
 });
 
-
+/**
+ * Compress images and add them to both folders for rebuild
+ */
 gulp.task('images', function () {
   return gulp.src('images/**/*')
     .pipe(imagemin({
