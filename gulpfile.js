@@ -69,7 +69,8 @@ gulp.task('sass', function () {
 gulp.task('images', function () {
   return gulp.src('images/**/*')
     .pipe(imagemin({
-      progressive: true
+      progressive: true,
+      interlaced: true
     }))
     .pipe(gulp.dest('_site/images'))
     .pipe(gulp.dest('images'));
