@@ -65,10 +65,12 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('css'));
 });
 
+
 gulp.task('images', function () {
   return gulp.src('images/**/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('_site/images'));
+    .pipe(gulp.dest('_site/images'))
+    .pipe(gulp.dest('images'));
 });
 
 /**
