@@ -68,7 +68,9 @@ gulp.task('sass', function () {
 
 gulp.task('images', function () {
   return gulp.src('images/**/*')
-    .pipe(imagemin())
+    .pipe(imagemin({
+      progressive: true
+    }))
     .pipe(gulp.dest('_site/images'))
     .pipe(gulp.dest('images'));
 });
