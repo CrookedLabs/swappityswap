@@ -31,7 +31,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
 * Wait for jekyll-build, then launch the Server
 */
-gulp.task('browser-sync', ['sass', 'js', 'images', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'js', 'assets', 'jekyll-build'], function() {
   browserSync({
     server: {
       baseDir: '_site'
@@ -66,16 +66,15 @@ gulp.task('sass', function () {
 });
 
 /**
- * Compress images and add them to both folders for rebuild
+ * Compress assets and add them to both folders for rebuild
  */
-gulp.task('images', function () {
-  return gulp.src('images/**/*')
+gulp.task('assets', function () {
+  return gulp.src('assets/**/*')
     .pipe(imagemin({
       progressive: true,
       interlaced: true
     }))
-    .pipe(gulp.dest('_site/images'))
-    .pipe(gulp.dest('images'));
+    .pipe(gulp.dest('_site/assets'));
 });
 
 /**
