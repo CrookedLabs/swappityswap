@@ -3,20 +3,14 @@ var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var cp = require('child_process');
-var htmlMin = require('gulp-minify-html');
 var jsMin = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
-
-var messages = {
-  jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
 
 /**
 * Build the Jekyll Site
 */
 gulp.task('jekyll-build', function (done) {
-  browserSync.notify(messages.jekyllBuild);
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
   .on('close', done);
 });
@@ -45,8 +39,7 @@ gulp.task('browser-sync', ['sass', 'js', 'assets', 'jekyll-build'], function() {
 gulp.task('js', function () {
   return gulp.src('js/*.js')
     .pipe(gulp.dest('_site/js'))
-    .pipe(browserSync.reload({stream: true}))
-    .pipe(gulp.dest('js'));
+    .pipe(browserSync.reload({stream: true}));
 });
 
 /**
@@ -61,8 +54,7 @@ gulp.task('sass', function () {
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('_site/css'))
-    .pipe(browserSync.reload({stream:true}))
-    .pipe(gulp.dest('css'));
+    .pipe(browserSync.reload({stream:true}));
 });
 
 /**
