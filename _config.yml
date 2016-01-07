@@ -16,4 +16,3 @@ github_username: CrookedLabs
 
 # Build settings
 markdown: kramdown
-keep_files: ["assets", "css", "js"]

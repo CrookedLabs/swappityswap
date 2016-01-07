@@ -3,11 +3,8 @@ var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var cp = require('child_process');
-var jsMin = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
-var gulpif = require('gulp-if');
-var argv = require('yargs').argv;
 
 /**
 * Build the Jekyll Site
@@ -42,7 +39,7 @@ gulp.task('js', function () {
   return gulp.src('js/*.js')
     .pipe(gulp.dest('_site/js'))
     .pipe(browserSync.reload({stream: true}))
-    .pipe(gulpif(argv.gh, gulp.dest('js')));
+    .pipe(gulp.dest('js'));
 });
 
 /**
@@ -58,7 +55,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.reload({stream:true}))
-    .pipe(gulpif(argv.gh, gulp.dest('css')));
+    .pipe(gulp.dest('css'));
 });
 
 /**
@@ -71,7 +68,7 @@ gulp.task('assets', function () {
       interlaced: true
     }))
     .pipe(gulp.dest('_site/assets'))
-    .pipe(gulpif(argv.gh, gulp.dest('assets')));
+    .pipe(gulp.dest('assets'));
 });
 
 /**
