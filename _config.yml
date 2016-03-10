@@ -13,7 +13,7 @@ baseurl: ""
 url: "http://swap.crookedlabs.co"
 twitter_username: crookedlabs
 github_username: CrookedLabs
-logo: /assets/images/fb-share.jpg
+logo: /assets/images/fbshare.jpg
 fb_appid: "1676433202617672"
 
 # Build settings
